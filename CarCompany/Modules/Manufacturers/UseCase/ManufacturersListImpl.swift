@@ -20,6 +20,6 @@ struct ManufacturersListImpl: UseCase {
 
 extension ManufacturersListImpl: ManufacturerList {
     func listManufacturers(page: Int, results: Int) -> [Manufacturer] {
-        return self.dataProvider?.getManufacturers(forPage: page, results: 15) ?? []
+        return self.dataProvider?.getManufacturers(forPage: page, results: results) ?? []
     }
 }
