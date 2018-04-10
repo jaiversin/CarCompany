@@ -32,8 +32,18 @@ class CarCompanyTests: XCTestCase {
     
     func testFetchManufacturers () {
         let manufacturers: [Manufacturer] = []
-        let manufacturersService: ManufacturerService
+        let dataProvider = ManufacturersListMockDataProvider()
+        let manufacturersList = ManufacturersListImpl(dataProvider: dataProvider)
         
         XCTAssert(!manufacturers.isEmpty)
     }
+}
+
+struct ManufacturersListMockDataProvider: ManufacturersListDataProviderProtocol {
+    func getManufacturers(forPage: Int, results: Int) -> [Manufacturer] {
+        let manufacturers = [Manufacturer]()
+        return manufacturers
+    }
+    
+    
 }
