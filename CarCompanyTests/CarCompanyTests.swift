@@ -12,7 +12,7 @@ import XCTest
 class CarCompanyTests: XCTestCase {
     
     /* TODO list
-     * Fetch manufacturers
+     * Fetch manufacturers not empty  ✅
      * Fetch 15 manufacturers for page 0
      * Fetch 0 manufacturers for page 100
      * Fetch manufacturers
@@ -30,20 +30,17 @@ class CarCompanyTests: XCTestCase {
         super.tearDown()
     }
     
-    func testFetchManufacturers () {
-        let manufacturers: [Manufacturer] = []
-        let dataProvider = ManufacturersListMockDataProvider()
+    func testFetchManufacturersNotEmpty() {
+        let dataProvider = MockManufacturersListDataProvider()
         let manufacturersList = ManufacturersListImpl(dataProvider: dataProvider)
         
-        XCTAssert(!manufacturers.isEmpty)
-    }
-}
-
-struct ManufacturersListMockDataProvider: ManufacturersListDataProviderProtocol {
-    func getManufacturers(forPage: Int, results: Int) -> [Manufacturer] {
-        let manufacturers = [Manufacturer]()
-        return manufacturers
+        XCTAssert(!manufacturersList.listManufacturers(page: 0, results: 15).isEmpty)
     }
     
-    
+    func testFetchManufacturersPageZeroFifteenResults() {
+        let dataProvider = MockManufacturersListDataProvider()
+        let manufacturersList = ManufacturersListImpl(dataProvider: dataProvider)
+        
+        XCTAssertEqual(manufacturersList.listManufacturers(page: 0, results: 15).count, 15)
+    }
 }

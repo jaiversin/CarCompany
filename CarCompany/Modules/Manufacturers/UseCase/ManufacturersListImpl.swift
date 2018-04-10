@@ -9,9 +9,9 @@
 import Foundation
 
 struct ManufacturersListImpl: UseCase {
-    var dataProvider: ManufacturersListDataProviderProtocol?
+    fileprivate let dataProvider: ManufacturersListDataProviderProtocol?
     
-    init(dataProvider: ManufacturersListDataProviderProtocol?) {
+    init(dataProvider: ManufacturersListDataProviderProtocol? = ManufacturersListDataProvider()) {
         self.dataProvider = dataProvider
     }
 }
@@ -20,6 +20,6 @@ struct ManufacturersListImpl: UseCase {
 
 extension ManufacturersListImpl: ManufacturerList {
     func listManufacturers(page: Int, results: Int) -> [Manufacturer] {
-        return []
+        return self.dataProvider?.getManufacturers(forPage: page, results: 15) ?? []
     }
 }
