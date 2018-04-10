@@ -17,7 +17,7 @@ class MockManufacturersListDataProvider: ManufacturersListDataProviderProtocol {
             return []
         }
         
-        let manufacturers = self.manufacturers ?? []
+        let manufacturers = Array(self.manufacturers?[(page * results)...(results - 1)] ?? [])
         
         return manufacturers
     }
