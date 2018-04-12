@@ -21,6 +21,13 @@
 		082C5228207C6D5700324DCC /* MockManufacturersListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5227207C6D5700324DCC /* MockManufacturersListDataProvider.swift */; };
 		082C522B207C741D00324DCC /* manufacturers.json in Resources */ = {isa = PBXBuildFile; fileRef = 082C522A207C741D00324DCC /* manufacturers.json */; };
 		082C522D207EEB1900324DCC /* MainTypesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C522C207EEB1900324DCC /* MainTypesUseCaseTests.swift */; };
+		082C5233207EEE7500324DCC /* MainType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5232207EEE7500324DCC /* MainType.swift */; };
+		082C5235207EEF4F00324DCC /* MainTypesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5234207EEF4F00324DCC /* MainTypesList.swift */; };
+		082C5237207EEFB000324DCC /* MainTypesListImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5236207EEFB000324DCC /* MainTypesListImpl.swift */; };
+		082C5239207EF05100324DCC /* MainTypesListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5238207EF05100324DCC /* MainTypesListDataProvider.swift */; };
+		082C523B207EF2B700324DCC /* MockMainTypesListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C523A207EF2B700324DCC /* MockMainTypesListDataProvider.swift */; };
+		082C523E207EF40E00324DCC /* JsonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C523D207EF40E00324DCC /* JsonUtils.swift */; };
+		082C5240207EF70800324DCC /* mainTypesRenault.json in Resources */ = {isa = PBXBuildFile; fileRef = 082C523F207EF70700324DCC /* mainTypesRenault.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +59,13 @@
 		082C5227207C6D5700324DCC /* MockManufacturersListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockManufacturersListDataProvider.swift; sourceTree = "<group>"; };
 		082C522A207C741D00324DCC /* manufacturers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = manufacturers.json; sourceTree = "<group>"; };
 		082C522C207EEB1900324DCC /* MainTypesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypesUseCaseTests.swift; sourceTree = "<group>"; };
+		082C5232207EEE7500324DCC /* MainType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainType.swift; sourceTree = "<group>"; };
+		082C5234207EEF4F00324DCC /* MainTypesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypesList.swift; sourceTree = "<group>"; };
+		082C5236207EEFB000324DCC /* MainTypesListImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypesListImpl.swift; sourceTree = "<group>"; };
+		082C5238207EF05100324DCC /* MainTypesListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypesListDataProvider.swift; sourceTree = "<group>"; };
+		082C523A207EF2B700324DCC /* MockMainTypesListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMainTypesListDataProvider.swift; sourceTree = "<group>"; };
+		082C523D207EF40E00324DCC /* JsonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtils.swift; sourceTree = "<group>"; };
+		082C523F207EF70700324DCC /* mainTypesRenault.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainTypesRenault.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,11 +122,12 @@
 		082C520920770D0A00324DCC /* CarCompanyTests */ = {
 			isa = PBXGroup;
 			children = (
+				082C523C207EF3B400324DCC /* Utils */,
 				082C5229207C723200324DCC /* Resources */,
 				082C5226207C6C5400324DCC /* Mocks */,
+				082C522C207EEB1900324DCC /* MainTypesUseCaseTests.swift */,
 				082C520A20770D0A00324DCC /* ManufacturersUseCaseTests.swift */,
 				082C520C20770D0A00324DCC /* Info.plist */,
-				082C522C207EEB1900324DCC /* MainTypesUseCaseTests.swift */,
 			);
 			path = CarCompanyTests;
 			sourceTree = "<group>";
@@ -120,6 +135,7 @@
 		082C52152077258600324DCC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				082C522E207EEE2600324DCC /* MainTypes */,
 				082C52162077258600324DCC /* Manufacturers */,
 			);
 			path = Modules;
@@ -128,8 +144,8 @@
 		082C52162077258600324DCC /* Manufacturers */ = {
 			isa = PBXGroup;
 			children = (
-				082C521F207941AF00324DCC /* Provider */,
 				082C521A20772F8000324DCC /* Model */,
+				082C521F207941AF00324DCC /* Provider */,
 				082C521720772DA800324DCC /* UseCase */,
 			);
 			path = Manufacturers;
@@ -181,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				082C5227207C6D5700324DCC /* MockManufacturersListDataProvider.swift */,
+				082C523A207EF2B700324DCC /* MockMainTypesListDataProvider.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -188,9 +205,53 @@
 		082C5229207C723200324DCC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				082C523F207EF70700324DCC /* mainTypesRenault.json */,
 				082C522A207C741D00324DCC /* manufacturers.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		082C522E207EEE2600324DCC /* MainTypes */ = {
+			isa = PBXGroup;
+			children = (
+				082C5230207EEE4000324DCC /* Model */,
+				082C522F207EEE3700324DCC /* Provider */,
+				082C5231207EEE5900324DCC /* UseCase */,
+			);
+			path = MainTypes;
+			sourceTree = "<group>";
+		};
+		082C522F207EEE3700324DCC /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				082C5238207EF05100324DCC /* MainTypesListDataProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		082C5230207EEE4000324DCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				082C5232207EEE7500324DCC /* MainType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		082C5231207EEE5900324DCC /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				082C5234207EEF4F00324DCC /* MainTypesList.swift */,
+				082C5236207EEFB000324DCC /* MainTypesListImpl.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		082C523C207EF3B400324DCC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				082C523D207EF40E00324DCC /* JsonUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				082C5240207EF70800324DCC /* mainTypesRenault.json in Resources */,
 				082C522B207C741D00324DCC /* manufacturers.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,12 +359,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				082C5233207EEE7500324DCC /* MainType.swift in Sources */,
 				082C521920772DDD00324DCC /* ManufacturersList.swift in Sources */,
 				082C52252079465600324DCC /* UseCasesLocator.swift in Sources */,
+				082C5235207EEF4F00324DCC /* MainTypesList.swift in Sources */,
 				082C51F820770D0A00324DCC /* ViewController.swift in Sources */,
 				082C521C2077301100324DCC /* Manufacturer.swift in Sources */,
+				082C5239207EF05100324DCC /* MainTypesListDataProvider.swift in Sources */,
 				082C52212079448D00324DCC /* ManufacturersListDataProvider.swift in Sources */,
 				082C521E2079408000324DCC /* ManufacturersListImpl.swift in Sources */,
+				082C5237207EEFB000324DCC /* MainTypesListImpl.swift in Sources */,
 				082C51F620770D0A00324DCC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,7 +379,9 @@
 			files = (
 				082C520B20770D0A00324DCC /* ManufacturersUseCaseTests.swift in Sources */,
 				082C522D207EEB1900324DCC /* MainTypesUseCaseTests.swift in Sources */,
+				082C523E207EF40E00324DCC /* JsonUtils.swift in Sources */,
 				082C5228207C6D5700324DCC /* MockManufacturersListDataProvider.swift in Sources */,
+				082C523B207EF2B700324DCC /* MockMainTypesListDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
