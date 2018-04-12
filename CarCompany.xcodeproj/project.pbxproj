@@ -12,7 +12,7 @@
 		082C51FB20770D0A00324DCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082C51F920770D0A00324DCC /* Main.storyboard */; };
 		082C51FD20770D0A00324DCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082C51FC20770D0A00324DCC /* Assets.xcassets */; };
 		082C520020770D0A00324DCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082C51FE20770D0A00324DCC /* LaunchScreen.storyboard */; };
-		082C520B20770D0A00324DCC /* CarCompanyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C520A20770D0A00324DCC /* CarCompanyTests.swift */; };
+		082C520B20770D0A00324DCC /* ManufacturersUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C520A20770D0A00324DCC /* ManufacturersUseCaseTests.swift */; };
 		082C521920772DDD00324DCC /* ManufacturersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C521820772DDD00324DCC /* ManufacturersList.swift */; };
 		082C521C2077301100324DCC /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C521B2077301100324DCC /* Manufacturer.swift */; };
 		082C521E2079408000324DCC /* ManufacturersListImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C521D2079408000324DCC /* ManufacturersListImpl.swift */; };
@@ -20,6 +20,7 @@
 		082C52252079465600324DCC /* UseCasesLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C52242079465600324DCC /* UseCasesLocator.swift */; };
 		082C5228207C6D5700324DCC /* MockManufacturersListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5227207C6D5700324DCC /* MockManufacturersListDataProvider.swift */; };
 		082C522B207C741D00324DCC /* manufacturers.json in Resources */ = {isa = PBXBuildFile; fileRef = 082C522A207C741D00324DCC /* manufacturers.json */; };
+		082C522D207EEB1900324DCC /* MainTypesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C522C207EEB1900324DCC /* MainTypesUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,7 @@
 		082C51FF20770D0A00324DCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		082C520120770D0A00324DCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		082C520620770D0A00324DCC /* CarCompanyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarCompanyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		082C520A20770D0A00324DCC /* CarCompanyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCompanyTests.swift; sourceTree = "<group>"; };
+		082C520A20770D0A00324DCC /* ManufacturersUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturersUseCaseTests.swift; sourceTree = "<group>"; };
 		082C520C20770D0A00324DCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		082C521820772DDD00324DCC /* ManufacturersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturersList.swift; sourceTree = "<group>"; };
 		082C521B2077301100324DCC /* Manufacturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manufacturer.swift; sourceTree = "<group>"; };
@@ -50,6 +51,7 @@
 		082C52242079465600324DCC /* UseCasesLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesLocator.swift; sourceTree = "<group>"; };
 		082C5227207C6D5700324DCC /* MockManufacturersListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockManufacturersListDataProvider.swift; sourceTree = "<group>"; };
 		082C522A207C741D00324DCC /* manufacturers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = manufacturers.json; sourceTree = "<group>"; };
+		082C522C207EEB1900324DCC /* MainTypesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypesUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +110,9 @@
 			children = (
 				082C5229207C723200324DCC /* Resources */,
 				082C5226207C6C5400324DCC /* Mocks */,
-				082C520A20770D0A00324DCC /* CarCompanyTests.swift */,
+				082C520A20770D0A00324DCC /* ManufacturersUseCaseTests.swift */,
 				082C520C20770D0A00324DCC /* Info.plist */,
+				082C522C207EEB1900324DCC /* MainTypesUseCaseTests.swift */,
 			);
 			path = CarCompanyTests;
 			sourceTree = "<group>";
@@ -308,7 +311,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				082C520B20770D0A00324DCC /* CarCompanyTests.swift in Sources */,
+				082C520B20770D0A00324DCC /* ManufacturersUseCaseTests.swift in Sources */,
+				082C522D207EEB1900324DCC /* MainTypesUseCaseTests.swift in Sources */,
 				082C5228207C6D5700324DCC /* MockManufacturersListDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

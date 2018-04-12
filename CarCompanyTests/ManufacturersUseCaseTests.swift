@@ -1,5 +1,5 @@
 //
-//  CarCompanyTests.swift
+//  ManufacturersUseCaseTests.swift
 //  CarCompanyTests
 //
 //  Created by Jhon on 4/5/18.
@@ -17,8 +17,6 @@ class ManufacturersUseCaseTests: XCTestCase {
      * Fetch 0 manufacturers for page 100 ✅
      * Fetch 5 manufacturers page 0 ✅
      * Fetch a manufacturer and check non-nil properties ✅
-     * Fetch 15 car main types for specific manufacturer for page 0
-     * Fetch 0 car main types for non existent manufacturer
      */
     
     override func setUp() {
