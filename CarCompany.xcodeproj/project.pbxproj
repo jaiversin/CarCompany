@@ -30,6 +30,10 @@
 		082C5240207EF70800324DCC /* mainTypesRenault.json in Resources */ = {isa = PBXBuildFile; fileRef = 082C523F207EF70700324DCC /* mainTypesRenault.json */; };
 		082C5243207F009A00324DCC /* ManufacturersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5242207F009A00324DCC /* ManufacturersService.swift */; };
 		082C5245207F06DD00324DCC /* MainTypesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5244207F06DD00324DCC /* MainTypesService.swift */; };
+		082C5248207F16BB00324DCC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082C5247207F16BB00324DCC /* Alamofire.framework */; };
+		082C524B207F1AB800324DCC /* ManufacturersServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C524A207F1AB800324DCC /* ManufacturersServiceTests.swift */; };
+		082C524C207F1C8500324DCC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082C5247207F16BB00324DCC /* Alamofire.framework */; };
+		082C524D207F1C8500324DCC /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 082C5247207F16BB00324DCC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,20 @@
 			remoteInfo = CarCompany;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		082C524E207F1C8500324DCC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				082C524D207F1C8500324DCC /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		082C51F220770D0A00324DCC /* CarCompany.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarCompany.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +88,8 @@
 		082C523F207EF70700324DCC /* mainTypesRenault.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainTypesRenault.json; sourceTree = "<group>"; };
 		082C5242207F009A00324DCC /* ManufacturersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturersService.swift; sourceTree = "<group>"; };
 		082C5244207F06DD00324DCC /* MainTypesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypesService.swift; sourceTree = "<group>"; };
+		082C5247207F16BB00324DCC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		082C524A207F1AB800324DCC /* ManufacturersServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturersServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				082C5248207F16BB00324DCC /* Alamofire.framework in Frameworks */,
+				082C524C207F1C8500324DCC /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +118,7 @@
 				082C51F420770D0A00324DCC /* CarCompany */,
 				082C520920770D0A00324DCC /* CarCompanyTests */,
 				082C51F320770D0A00324DCC /* Products */,
+				082C5246207F16BA00324DCC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +149,7 @@
 		082C520920770D0A00324DCC /* CarCompanyTests */ = {
 			isa = PBXGroup;
 			children = (
+				082C5249207F1AA400324DCC /* Services */,
 				082C523C207EF3B400324DCC /* Utils */,
 				082C5229207C723200324DCC /* Resources */,
 				082C5226207C6C5400324DCC /* Mocks */,
@@ -268,6 +292,22 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		082C5246207F16BA00324DCC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				082C5247207F16BB00324DCC /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		082C5249207F1AA400324DCC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				082C524A207F1AB800324DCC /* ManufacturersServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -278,6 +318,7 @@
 				082C51EE20770D0A00324DCC /* Sources */,
 				082C51EF20770D0A00324DCC /* Frameworks */,
 				082C51F020770D0A00324DCC /* Resources */,
+				082C524E207F1C8500324DCC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -393,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				082C524B207F1AB800324DCC /* ManufacturersServiceTests.swift in Sources */,
 				082C520B20770D0A00324DCC /* ManufacturersUseCaseTests.swift in Sources */,
 				082C522D207EEB1900324DCC /* MainTypesUseCaseTests.swift in Sources */,
 				082C523E207EF40E00324DCC /* JsonUtils.swift in Sources */,
@@ -544,6 +586,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N6R4845CW9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarCompany/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jaiversin.com.CarCompany;
@@ -559,6 +605,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N6R4845CW9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarCompany/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jaiversin.com.CarCompany;

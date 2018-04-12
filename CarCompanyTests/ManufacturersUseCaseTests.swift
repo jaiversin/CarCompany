@@ -34,7 +34,7 @@ class ManufacturersUseCaseTests: XCTestCase {
         manufacturersList.listManufacturers(page: 0, results: 15) { response in
             switch response {
             case .success(let manufacturers):
-                XCTAssert(!manufacturers.isEmpty)
+                XCTAssert(!manufacturers.isEmpty, "The fetch should not be empty")
             case .failure, .noInternetConnection:
                 XCTFail("Data provider error")
             }
