@@ -35,6 +35,9 @@
 		082C524C207F1C8500324DCC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082C5247207F16BB00324DCC /* Alamofire.framework */; };
 		082C524D207F1C8500324DCC /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 082C5247207F16BB00324DCC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		082C5250207F235800324DCC /* MainTypesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C524F207F235800324DCC /* MainTypesServiceTests.swift */; };
+		082C5254207F27DD00324DCC /* ManufacturersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5253207F27DD00324DCC /* ManufacturersListViewModel.swift */; };
+		082C5257207F2B2400324DCC /* ManufacturersListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5256207F2B2400324DCC /* ManufacturersListViewModelTests.swift */; };
+		082C5259207F2CCE00324DCC /* MockUseCasesLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5258207F2CCE00324DCC /* MockUseCasesLocator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +95,9 @@
 		082C5247207F16BB00324DCC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		082C524A207F1AB800324DCC /* ManufacturersServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturersServiceTests.swift; sourceTree = "<group>"; };
 		082C524F207F235800324DCC /* MainTypesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypesServiceTests.swift; sourceTree = "<group>"; };
+		082C5253207F27DD00324DCC /* ManufacturersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturersListViewModel.swift; sourceTree = "<group>"; };
+		082C5256207F2B2400324DCC /* ManufacturersListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturersListViewModelTests.swift; sourceTree = "<group>"; };
+		082C5258207F2CCE00324DCC /* MockUseCasesLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUseCasesLocator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,7 @@
 		082C520920770D0A00324DCC /* CarCompanyTests */ = {
 			isa = PBXGroup;
 			children = (
+				082C5255207F2AF000324DCC /* ViewModels */,
 				082C5249207F1AA400324DCC /* Services */,
 				082C523C207EF3B400324DCC /* Utils */,
 				082C5229207C723200324DCC /* Resources */,
@@ -174,6 +181,7 @@
 		082C52162077258600324DCC /* Manufacturers */ = {
 			isa = PBXGroup;
 			children = (
+				082C5251207F27AF00324DCC /* UI */,
 				082C521A20772F8000324DCC /* Model */,
 				082C521F207941AF00324DCC /* Provider */,
 				082C521720772DA800324DCC /* UseCase */,
@@ -229,6 +237,7 @@
 			children = (
 				082C5227207C6D5700324DCC /* MockManufacturersListDataProvider.swift */,
 				082C523A207EF2B700324DCC /* MockMainTypesListDataProvider.swift */,
+				082C5258207F2CCE00324DCC /* MockUseCasesLocator.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -309,6 +318,22 @@
 				082C524F207F235800324DCC /* MainTypesServiceTests.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		082C5251207F27AF00324DCC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				082C5253207F27DD00324DCC /* ManufacturersListViewModel.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		082C5255207F2AF000324DCC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				082C5256207F2B2400324DCC /* ManufacturersListViewModelTests.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +447,7 @@
 				082C52252079465600324DCC /* UseCasesLocator.swift in Sources */,
 				082C5235207EEF4F00324DCC /* MainTypesList.swift in Sources */,
 				082C51F820770D0A00324DCC /* ViewController.swift in Sources */,
+				082C5254207F27DD00324DCC /* ManufacturersListViewModel.swift in Sources */,
 				082C521C2077301100324DCC /* Manufacturer.swift in Sources */,
 				082C5239207EF05100324DCC /* MainTypesListDataProvider.swift in Sources */,
 				082C52212079448D00324DCC /* ManufacturersListDataProvider.swift in Sources */,
@@ -440,9 +466,11 @@
 				082C524B207F1AB800324DCC /* ManufacturersServiceTests.swift in Sources */,
 				082C520B20770D0A00324DCC /* ManufacturersUseCaseTests.swift in Sources */,
 				082C522D207EEB1900324DCC /* MainTypesUseCaseTests.swift in Sources */,
+				082C5259207F2CCE00324DCC /* MockUseCasesLocator.swift in Sources */,
 				082C523E207EF40E00324DCC /* JsonUtils.swift in Sources */,
 				082C5250207F235800324DCC /* MainTypesServiceTests.swift in Sources */,
 				082C5228207C6D5700324DCC /* MockManufacturersListDataProvider.swift in Sources */,
+				082C5257207F2B2400324DCC /* ManufacturersListViewModelTests.swift in Sources */,
 				082C523B207EF2B700324DCC /* MockMainTypesListDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

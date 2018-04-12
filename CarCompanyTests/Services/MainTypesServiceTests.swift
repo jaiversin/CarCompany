@@ -12,7 +12,9 @@ import XCTest
 class MainTypesServiceTests: XCTestCase {
     
     /* TODO list
-     * Service call success fetching 15 results for page 0 
+     * Service call success fetching 15 results for page 0 ✅
+     * Test failure case 🙈
+     * Test no internet connection 🙈
      */
     
     override func setUp() {

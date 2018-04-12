@@ -17,15 +17,17 @@ protocol UseCase {
     
 }
 
-struct UseCasesLocator {
-    static func getUseCase(type: UseCaseType) -> UseCase? {
+protocol UseCasesLocatorProtocol {
+    func getUseCase(type: UseCaseType) -> UseCase?
+}
+
+struct UseCasesLocator: UseCasesLocatorProtocol {
+    func getUseCase(type: UseCaseType) -> UseCase? {
         switch type {
         case .manufacturersList:
             return ManufacturersListImpl()
         case .mainTypesList:
             return MainTypesListImpl()
-        default:
-            return nil
         }
     }
 }
