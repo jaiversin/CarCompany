@@ -1,18 +1,18 @@
 //
-//  ManufacturersServiceTests.swift
+//  MainTypesServiceTests.swift
 //  CarCompanyTests
 //
-//  Created by Jhon on 4/11/18.
+//  Created by Jhon on 4/12/18.
 //  Copyright © 2018 Jhon Jaiver López. All rights reserved.
 //
 
 import XCTest
 @testable import CarCompany
 
-class ManufacturersServiceTests: XCTestCase {
+class MainTypesServiceTests: XCTestCase {
     
     /* TODO list
-     * Service call success fetching 15 results for page 0 ✅
+     * Service call success fetching 15 results for page 0 
      */
     
     override func setUp() {
@@ -27,17 +27,17 @@ class ManufacturersServiceTests: XCTestCase {
     
     /// Please fulfill the endpont and waKey on the Service before running
     func testFetchFifteenResultsPageZero() {
-        let service = ManufacturersService()
-        let fetchManufacturers = expectation(description: "fetchManufacturers")
-        service.getManufacturers(forPage: 0, results: 15) { (response) in
+        let service = MainTypesService()
+        let fetchMainTypes = expectation(description: "fetchMainTypes")
+        service.getMainTypes(manufacturer: "720", page: 0, results: 15) { (response) in
             switch response {
-            case .success(let manufacturers):
-                XCTAssertEqual(manufacturers.count, 15, "The fetch should bring 15 results for page 0")
+            case .success(let mainTypes):
+                XCTAssertEqual(mainTypes.count, 15, "The fetch should bring 15 results for page 0")
             case .failure, .noInternetConnection:
                 XCTFail("Data provider error")
             }
             
-            fetchManufacturers.fulfill()
+            fetchMainTypes.fulfill()
         }
         waitForExpectations(timeout: 20, handler: nil)
     }

@@ -34,6 +34,7 @@
 		082C524B207F1AB800324DCC /* ManufacturersServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C524A207F1AB800324DCC /* ManufacturersServiceTests.swift */; };
 		082C524C207F1C8500324DCC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082C5247207F16BB00324DCC /* Alamofire.framework */; };
 		082C524D207F1C8500324DCC /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 082C5247207F16BB00324DCC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		082C5250207F235800324DCC /* MainTypesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C524F207F235800324DCC /* MainTypesServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		082C5244207F06DD00324DCC /* MainTypesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypesService.swift; sourceTree = "<group>"; };
 		082C5247207F16BB00324DCC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		082C524A207F1AB800324DCC /* ManufacturersServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturersServiceTests.swift; sourceTree = "<group>"; };
+		082C524F207F235800324DCC /* MainTypesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypesServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				082C524A207F1AB800324DCC /* ManufacturersServiceTests.swift */,
+				082C524F207F235800324DCC /* MainTypesServiceTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				082C520B20770D0A00324DCC /* ManufacturersUseCaseTests.swift in Sources */,
 				082C522D207EEB1900324DCC /* MainTypesUseCaseTests.swift in Sources */,
 				082C523E207EF40E00324DCC /* JsonUtils.swift in Sources */,
+				082C5250207F235800324DCC /* MainTypesServiceTests.swift in Sources */,
 				082C5228207C6D5700324DCC /* MockManufacturersListDataProvider.swift in Sources */,
 				082C523B207EF2B700324DCC /* MockMainTypesListDataProvider.swift in Sources */,
 			);
