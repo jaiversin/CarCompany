@@ -9,5 +9,5 @@
 import Foundation
 
 protocol MainTypesList {
-    func listMainTypes(manufacturer: String, page: Int, results: Int) -> [MainType]
+    func listMainTypes(manufacturer: String, page: Int, results: Int, completion: @escaping (MainTypesResponse) -> Void)
 }

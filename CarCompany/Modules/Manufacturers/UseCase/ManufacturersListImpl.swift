@@ -11,7 +11,7 @@ import Foundation
 struct ManufacturersListImpl: UseCase {
     fileprivate let dataProvider: ManufacturersListDataProviderProtocol?
     
-    init(dataProvider: ManufacturersListDataProviderProtocol? = ManufacturersListDataProvider()) {
+    init(dataProvider: ManufacturersListDataProviderProtocol? = ManufacturersService()) {
         self.dataProvider = dataProvider
     }
 }
@@ -19,7 +19,9 @@ struct ManufacturersListImpl: UseCase {
 // MARK: - ManufacturerList
 
 extension ManufacturersListImpl: ManufacturerList {
-    func listManufacturers(page: Int, results: Int) -> [Manufacturer] {
-        return self.dataProvider?.getManufacturers(forPage: page, results: results) ?? []
+    func listManufacturers(page: Int, results: Int, completion: @escaping (ManufacturersResponse) -> Void) {
+        self.dataProvider?.getManufacturers(forPage: page, results: results) { (response) in
+            completion(response)
+        }
     }
 }

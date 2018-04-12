@@ -10,7 +10,7 @@ import XCTest
 @testable import CarCompany
 
 class MainTypesUseCaseTests: XCTestCase {
-    //private let dataProvider = MockMainTypesListDataProvider()
+    private let list = MainTypesListImpl(dataProvider: MockMainTypesListDataProvider())
     /* TODO list
     * Fetch main types not empty ✅
     * Fetch main types empty for non-existent manufacturer ✅
@@ -30,25 +30,51 @@ class MainTypesUseCaseTests: XCTestCase {
     }
     
     func testFetchMainTypesNotEmpty() {
-        let list = MainTypesListImpl(dataProvider: MockMainTypesListDataProvider())
-        let types = list.listMainTypes(manufacturer: "720", page: 0, results: 15)
+        let fetchMainTypes = expectation(description: "fetchMainTypes")
         
-        XCTAssert(!types.isEmpty, "List of main types for Renault (720) should not be empty.")
-        XCTAssertEqual(types.count, 15, "There should be 15 results")
-        XCTAssertEqual(types.first, MainType(name: "5"), "Main Types should match")
+        list.listMainTypes(manufacturer: "720", page: 0, results: 15) { (response) in
+            switch response {
+            case .success(let types):
+                XCTAssertEqual(types.count, 15, "There should be 15 results")
+                XCTAssertEqual(types.first, MainType(name: "5"), "Main Types should match")
+            case .failure, .noInternetConnection:
+                XCTFail("Data provider error")
+            }
+            
+            fetchMainTypes.fulfill()
+        }
+        waitForExpectations(timeout: 2, handler: nil)
     }
     
     func testFetchMainTypesEmptyForNonExistentManufacturer() {
-        let list = MainTypesListImpl(dataProvider: MockMainTypesListDataProvider())
+        let fetchMainTypes = expectation(description: "fetchMainTypes")
         
-        // Main types for Renault
-        XCTAssert(list.listMainTypes(manufacturer: "7200", page: 0, results: 15).isEmpty, "List of main types for non existing manufacturer should be empty.")
+        list.listMainTypes(manufacturer: "7200", page: 0, results: 15) { (response) in
+            switch response {
+            case .success(let types):
+                XCTAssert(types.isEmpty, "List of main types for non existing manufacturer should be empty.")
+            case .failure, .noInternetConnection:
+                XCTFail("Data provider error")
+            }
+            
+            fetchMainTypes.fulfill()
+        }
+        waitForExpectations(timeout: 2, handler: nil)
     }
     
     func testFetchMainTypesEmptyForOutOfBoundsPage() {
-        let list = MainTypesListImpl(dataProvider: MockMainTypesListDataProvider())
+        let fetchMainTypes = expectation(description: "fetchMainTypes")
         
-        // Main types for Renault
-        XCTAssert(list.listMainTypes(manufacturer: "720", page: 4, results: 15).isEmpty, "List of main types for out of bounds page should be empty.")
+        list.listMainTypes(manufacturer: "720", page: 4, results: 15) { (response) in
+            switch response {
+            case .success(let types):
+                XCTAssert(types.isEmpty, "List of main types for out of bounds page should be empty.")
+            case .failure, .noInternetConnection:
+                XCTFail("Data provider error")
+            }
+            
+            fetchMainTypes.fulfill()
+        }
+        waitForExpectations(timeout: 2, handler: nil)
     }
 }

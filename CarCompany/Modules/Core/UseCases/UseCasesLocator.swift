@@ -21,7 +21,9 @@ struct UseCasesLocator {
     static func getUseCase(type: UseCaseType) -> UseCase? {
         switch type {
         case .manufacturersList:
-            return ManufacturersListImpl(dataProvider: ManufacturersListDataProvider())
+            return ManufacturersListImpl()
+        case .mainTypesList:
+            return MainTypesListImpl()
         default:
             return nil
         }

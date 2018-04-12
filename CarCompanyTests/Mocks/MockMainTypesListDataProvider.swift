@@ -11,18 +11,16 @@ import Foundation
 
 class MockMainTypesListDataProvider: MainTypesListDataProviderProtocol {
     private let totalPageCount = 2
-    
-    func getMainTypes(manufacturer: String, page: Int, results: Int) -> [MainType] {
-        guard page < totalPageCount,
-            manufacturer == "720" else { //Fulfilling requirement for empty result on non existent manufacturer
-            return []
+    func getMainTypes(manufacturer: String, page: Int, results: Int, completion: @escaping (MainTypesResponse) -> Void) {
+        guard page < totalPageCount, manufacturer == "720" else { //Fulfilling requirement for empty result on non existent manufacturer
+            completion(.success(mainTypes: []))
+            return 
         }
         
         let manufacturers = Array(self.mainTypes?[(page * results)...(results - 1)] ?? [])
         
-        return manufacturers
+        completion(.success(mainTypes: manufacturers))
     }
-
 }
 
 extension MockMainTypesListDataProvider {

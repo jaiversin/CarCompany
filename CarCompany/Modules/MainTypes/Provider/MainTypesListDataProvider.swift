@@ -8,14 +8,12 @@
 
 import Foundation
 
-struct MainTypesListDataProvider: MainTypesListDataProviderProtocol {
-    func getMainTypes(manufacturer: String, page: Int, results: Int) -> [MainType] {
-        return []
-    }
-    
-    
+enum MainTypesResponse {
+    case failure
+    case noInternetConnection
+    case success(mainTypes: [MainType])
 }
 
 protocol MainTypesListDataProviderProtocol {
-    func getMainTypes(manufacturer: String, page: Int, results: Int) -> [MainType]
+    func getMainTypes(manufacturer: String, page: Int, results: Int, completion: @escaping (MainTypesResponse) -> Void)
 }

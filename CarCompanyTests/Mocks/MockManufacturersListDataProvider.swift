@@ -11,15 +11,15 @@ import Foundation
 
 class MockManufacturersListDataProvider: ManufacturersListDataProviderProtocol {
     private let totalPageCount = 5
-    
-    func getManufacturers(forPage page: Int, results: Int) -> [Manufacturer] {
+    func getManufacturers(forPage page: Int, results: Int, completion: @escaping (ManufacturersResponse) -> Void) {
         guard page < totalPageCount else {
-            return []
+            completion(.success(manufacturers: []))
+            return
         }
         
         let manufacturers = Array(self.manufacturers?[(page * results)...(results - 1)] ?? [])
         
-        return manufacturers
+        completion(.success(manufacturers: manufacturers))
     }
 }
 

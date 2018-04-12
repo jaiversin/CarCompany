@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct ManufacturersListDataProvider: ManufacturersListDataProviderProtocol {
-    func getManufacturers(forPage: Int, results: Int) -> [Manufacturer] {
-        return []
-    }
+enum ManufacturersResponse {
+    case failure
+    case noInternetConnection
+    case success(manufacturers: [Manufacturer])
 }
 
 protocol ManufacturersListDataProviderProtocol {
-    func getManufacturers(forPage: Int, results: Int) -> [Manufacturer]
+    func getManufacturers(forPage: Int, results: Int, completion: @escaping (ManufacturersResponse) -> Void)
 }

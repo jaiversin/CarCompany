@@ -10,7 +10,7 @@ import XCTest
 @testable import CarCompany
 
 class ManufacturersUseCaseTests: XCTestCase {
-    private let dataProvider = MockManufacturersListDataProvider()
+    private let manufacturersList = ManufacturersListImpl(dataProvider: MockManufacturersListDataProvider())
     /* TODO list
      * Fetch manufacturers not empty  ✅
      * Fetch 15 manufacturers for page 0 ✅
@@ -30,30 +30,63 @@ class ManufacturersUseCaseTests: XCTestCase {
     }
     
     func testFetchManufacturersNotEmpty() {
-        XCTAssert(!makeList(forPage: 0, results: 15).isEmpty)
+        let fetchManufacturers = expectation(description: "fetchManufacturers")
+        manufacturersList.listManufacturers(page: 0, results: 15) { response in
+            switch response {
+            case .success(let manufacturers):
+                XCTAssert(!manufacturers.isEmpty)
+            case .failure, .noInternetConnection:
+                XCTFail("Data provider error")
+            }
+            
+            fetchManufacturers.fulfill()
+        }
+        waitForExpectations(timeout: 2, handler: nil)
     }
     
     func testFetchManufacturersPageZeroFifteenResults() {
-        let list = makeList(forPage: 0, results: 15)
-        
-        XCTAssertEqual(list.count, 15, "Every page fetch should bring 15 results")
-        XCTAssertEqual(list.first!, Manufacturer(id: 700, name: "Pontiac"), "Manufacturers should match")
+        let fetchManufacturers = expectation(description: "fetchManufacturers")
+        manufacturersList.listManufacturers(page: 0, results: 15) { response in
+            switch response {
+            case .success(let manufacturers):
+                XCTAssertEqual(manufacturers.count, 15, "Every page fetch should bring 15 results")
+                XCTAssertEqual(manufacturers.first!, Manufacturer(id: 700, name: "Pontiac"), "Manufacturers should match")
+            case .failure, .noInternetConnection:
+                XCTFail("Data provider error")
+            }
+            
+            fetchManufacturers.fulfill()
+        }
+        waitForExpectations(timeout: 2, handler: nil)
     }
     
     func testFetchManufacturersPageZeroFiveResults() {
-        let list = makeList(forPage: 0, results: 5)
-        
-        XCTAssertEqual(list.count, 5, "Every page fetch should bring 5 results")
+        let fetchManufacturers = expectation(description: "fetchManufacturers")
+        manufacturersList.listManufacturers(page: 0, results: 5) { response in
+            switch response {
+            case .success(let manufacturers):
+                XCTAssertEqual(manufacturers.count, 5, "Every page fetch should bring 5 results")
+            case .failure, .noInternetConnection:
+                XCTFail("Data provider error")
+            }
+            
+            fetchManufacturers.fulfill()
+        }
+        waitForExpectations(timeout: 2, handler: nil)
     }
     
     func testFetchNoResultsForOutOfBoundsPage() {
-        XCTAssert(makeList(forPage: 6, results: 15).isEmpty, "Should return empty array when attempting to fetch out of bound page")
-    }
-}
-
-fileprivate extension ManufacturersUseCaseTests {
-    func makeList(forPage page: Int, results: Int) -> [Manufacturer] {
-        let manufacturersList = ManufacturersListImpl(dataProvider: dataProvider)
-        return manufacturersList.listManufacturers(page: page, results: results)
+        let fetchManufacturers = expectation(description: "fetchManufacturers")
+        manufacturersList.listManufacturers(page: 6, results: 5) { response in
+            switch response {
+            case .success(let manufacturers):
+                XCTAssert(manufacturers.isEmpty, "Every page fetch should bring 5 results")
+            case .failure, .noInternetConnection:
+                XCTFail("Data provider error")
+            }
+            
+            fetchManufacturers.fulfill()
+        }
+        waitForExpectations(timeout: 2, handler: nil)
     }
 }

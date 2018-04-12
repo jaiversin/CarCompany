@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ManufacturerList {
-    func listManufacturers(page: Int, results: Int) -> [Manufacturer]
+    func listManufacturers(page: Int, results: Int, completion: @escaping (ManufacturersResponse) -> Void)
 }

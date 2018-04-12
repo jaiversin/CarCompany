@@ -28,6 +28,8 @@
 		082C523B207EF2B700324DCC /* MockMainTypesListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C523A207EF2B700324DCC /* MockMainTypesListDataProvider.swift */; };
 		082C523E207EF40E00324DCC /* JsonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C523D207EF40E00324DCC /* JsonUtils.swift */; };
 		082C5240207EF70800324DCC /* mainTypesRenault.json in Resources */ = {isa = PBXBuildFile; fileRef = 082C523F207EF70700324DCC /* mainTypesRenault.json */; };
+		082C5243207F009A00324DCC /* ManufacturersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5242207F009A00324DCC /* ManufacturersService.swift */; };
+		082C5245207F06DD00324DCC /* MainTypesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5244207F06DD00324DCC /* MainTypesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		082C523A207EF2B700324DCC /* MockMainTypesListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMainTypesListDataProvider.swift; sourceTree = "<group>"; };
 		082C523D207EF40E00324DCC /* JsonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtils.swift; sourceTree = "<group>"; };
 		082C523F207EF70700324DCC /* mainTypesRenault.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainTypesRenault.json; sourceTree = "<group>"; };
+		082C5242207F009A00324DCC /* ManufacturersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturersService.swift; sourceTree = "<group>"; };
+		082C5244207F06DD00324DCC /* MainTypesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,7 @@
 		082C52222079463A00324DCC /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				082C5241207F007400324DCC /* Services */,
 				082C52232079463A00324DCC /* UseCases */,
 			);
 			name = Core;
@@ -252,6 +257,15 @@
 				082C523D207EF40E00324DCC /* JsonUtils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		082C5241207F007400324DCC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				082C5242207F009A00324DCC /* ManufacturersService.swift */,
+				082C5244207F06DD00324DCC /* MainTypesService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,7 +383,9 @@
 				082C52212079448D00324DCC /* ManufacturersListDataProvider.swift in Sources */,
 				082C521E2079408000324DCC /* ManufacturersListImpl.swift in Sources */,
 				082C5237207EEFB000324DCC /* MainTypesListImpl.swift in Sources */,
+				082C5243207F009A00324DCC /* ManufacturersService.swift in Sources */,
 				082C51F620770D0A00324DCC /* AppDelegate.swift in Sources */,
+				082C5245207F06DD00324DCC /* MainTypesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
