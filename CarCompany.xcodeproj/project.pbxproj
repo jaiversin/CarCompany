@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		082C51F620770D0A00324DCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C51F520770D0A00324DCC /* AppDelegate.swift */; };
-		082C51F820770D0A00324DCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C51F720770D0A00324DCC /* ViewController.swift */; };
+		082C51F820770D0A00324DCC /* ManufacturersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C51F720770D0A00324DCC /* ManufacturersListViewController.swift */; };
 		082C51FB20770D0A00324DCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082C51F920770D0A00324DCC /* Main.storyboard */; };
 		082C51FD20770D0A00324DCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082C51FC20770D0A00324DCC /* Assets.xcassets */; };
 		082C520020770D0A00324DCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082C51FE20770D0A00324DCC /* LaunchScreen.storyboard */; };
@@ -67,7 +67,7 @@
 /* Begin PBXFileReference section */
 		082C51F220770D0A00324DCC /* CarCompany.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarCompany.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		082C51F520770D0A00324DCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		082C51F720770D0A00324DCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		082C51F720770D0A00324DCC /* ManufacturersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturersListViewController.swift; sourceTree = "<group>"; };
 		082C51FA20770D0A00324DCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		082C51FC20770D0A00324DCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		082C51FF20770D0A00324DCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -145,7 +145,6 @@
 				082C52222079463A00324DCC /* Core */,
 				082C52152077258600324DCC /* Modules */,
 				082C51F520770D0A00324DCC /* AppDelegate.swift */,
-				082C51F720770D0A00324DCC /* ViewController.swift */,
 				082C51F920770D0A00324DCC /* Main.storyboard */,
 				082C51FC20770D0A00324DCC /* Assets.xcassets */,
 				082C51FE20770D0A00324DCC /* LaunchScreen.storyboard */,
@@ -323,6 +322,7 @@
 		082C5251207F27AF00324DCC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				082C51F720770D0A00324DCC /* ManufacturersListViewController.swift */,
 				082C5253207F27DD00324DCC /* ManufacturersListViewModel.swift */,
 			);
 			path = UI;
@@ -446,7 +446,7 @@
 				082C521920772DDD00324DCC /* ManufacturersList.swift in Sources */,
 				082C52252079465600324DCC /* UseCasesLocator.swift in Sources */,
 				082C5235207EEF4F00324DCC /* MainTypesList.swift in Sources */,
-				082C51F820770D0A00324DCC /* ViewController.swift in Sources */,
+				082C51F820770D0A00324DCC /* ManufacturersListViewController.swift in Sources */,
 				082C5254207F27DD00324DCC /* ManufacturersListViewModel.swift in Sources */,
 				082C521C2077301100324DCC /* Manufacturer.swift in Sources */,
 				082C5239207EF05100324DCC /* MainTypesListDataProvider.swift in Sources */,
