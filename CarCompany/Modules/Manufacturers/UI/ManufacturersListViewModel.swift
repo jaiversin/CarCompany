@@ -28,6 +28,7 @@ final class ManufacturersListViewModel {
             updateManufacturers()
         }
     }
+    var selectedManufacturer: Manufacturer?
     
     init(useCasesLocator: UseCasesLocatorProtocol = UseCasesLocator(), pageResults: Int = 15) {
         self.useCasesLocator = useCasesLocator
@@ -37,6 +38,10 @@ final class ManufacturersListViewModel {
     func incrementPage() {
         guard let page = self.page, page < maxNumOfPages else { return }
         self.page = page + 1
+    }
+    
+    func selectManufacturer(atIndex index: Int) {
+        self.selectedManufacturer = self.manufacturers?[index]
     }
 }
 

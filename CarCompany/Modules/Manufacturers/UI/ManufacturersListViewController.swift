@@ -54,6 +54,7 @@ extension ManufacturersListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selectManufacturer(atIndex: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
