@@ -10,7 +10,7 @@ import Foundation
 @testable import CarCompany
 
 class MockUseCasesLocator: UseCasesLocatorProtocol {
-    static func getUseCase(type: UseCaseType) -> UseCase? {
+    func getUseCase(type: UseCaseType) -> UseCase? {
         switch type {
         case .manufacturersList:
             return ManufacturersListImpl(dataProvider: MockManufacturersListDataProvider())

@@ -11,6 +11,13 @@ import Foundation
 struct Manufacturer {
     let id: Int
     let name: String
+    var totalPageCount: Int = Int.max
+    
+    init(id: Int, name: String, totalPageCount: Int = Int.max) {
+        self.id = id
+        self.name = name
+        self.totalPageCount = totalPageCount
+    }
 }
 
 extension Manufacturer: Equatable {

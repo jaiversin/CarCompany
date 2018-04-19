@@ -11,8 +11,8 @@ import Alamofire
 
 class MainTypesService: MainTypesListDataProviderProtocol {
     fileprivate struct Constants {
-        static let waKey = ""
-        static let endpoint = ""
+        static let waKey = "coding-puzzle-client-449cc9d"
+        static let endpoint = "http://api-aws-eu-qa-1.auto1-test.com/v1/car-types/main-types?page=%d&pageSize=%d&manufacturer=%@&wa_key=%@"
     }
 }
 
