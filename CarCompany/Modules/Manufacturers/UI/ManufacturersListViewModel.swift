@@ -10,10 +10,9 @@ import Foundation
 typealias ManufacturerListResponse = ([Manufacturer]) -> Void
 
 final class ManufacturersListViewModel {
-    fileprivate let pageResults: Int
     fileprivate let useCasesLocator: UseCasesLocatorProtocol?
     fileprivate var maxNumOfPages = Int.max
-    
+    let pageResults: Int
     var onListDidChange: (() -> Void)? = nil
     var manufacturers: [Manufacturer]? = []
     var page: Int? {

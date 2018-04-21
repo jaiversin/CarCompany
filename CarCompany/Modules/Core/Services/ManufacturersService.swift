@@ -13,8 +13,8 @@ typealias JSON = [String:Any]
 
 final class ManufacturersService {
     fileprivate struct Constants {
-        static let waKey = "coding-puzzle-client-449cc9d"
-        static let endpoint = "http://api-aws-eu-qa-1.auto1-test.com/v1/car-types/manufacturer?page=%d&pageSize=%d&wa_key=%@"
+        static let waKey = ""
+        static let endpoint = ""
     }
 }
 
@@ -63,9 +63,8 @@ extension ManufacturersService {
         }
         
         let manufacturers = resultsDictionary.flatMap { (arg) -> Manufacturer? in
-            let (key, value) = arg
-            guard let id = Int(key as String),
-                let name = value as? String else {
+            let (id, value) = arg
+            guard let name = value as? String else {
                 return nil
             }
             return Manufacturer(id: id, name: name, totalPageCount: totalPageCount)

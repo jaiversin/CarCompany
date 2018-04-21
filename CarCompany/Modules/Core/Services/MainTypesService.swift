@@ -11,8 +11,8 @@ import Alamofire
 
 class MainTypesService: MainTypesListDataProviderProtocol {
     fileprivate struct Constants {
-        static let waKey = "coding-puzzle-client-449cc9d"
-        static let endpoint = "http://api-aws-eu-qa-1.auto1-test.com/v1/car-types/main-types?page=%d&pageSize=%d&manufacturer=%@&wa_key=%@"
+        static let waKey = ""
+        static let endpoint = ""
     }
 }
 
@@ -50,12 +50,13 @@ extension MainTypesService {
 }
 
 extension MainTypesService {
-    static func makeEndoint(forPage: Int, results: Int, manufacturer: String) -> String {
-        return String(format: self.Constants.endpoint, 0, 15, manufacturer, self.Constants.waKey)
+    static func makeEndoint(forPage page: Int, results: Int, manufacturer: String) -> String {
+        return String(format: self.Constants.endpoint, page, 15, manufacturer, self.Constants.waKey)
     }
     
     static func parse(response: JSON) -> [MainType]? {
-        guard let resultsDictionary = response["wkda"] as? [String: Any] else {
+        guard let resultsDictionary = response["wkda"] as? [String: Any],
+            let totalPageCount = response["totalPageCount"] as? Int else {
             return []
         }
         
@@ -64,7 +65,7 @@ extension MainTypesService {
             guard let name = name as? String else {
                 return nil
             }
-            return MainType(name: name)
+            return MainType(name: name, totalPageCount: totalPageCount)
         }
         
         return mainTypes

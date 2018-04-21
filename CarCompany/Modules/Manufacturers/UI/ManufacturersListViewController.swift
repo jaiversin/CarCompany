@@ -9,7 +9,7 @@
 import UIKit
 
 final class ManufacturersListViewController: UIViewController {
-    
+    fileprivate static let mainTypesSegue = "showMainTypes"
     fileprivate let viewModel = ManufacturersListViewModel()
     
     @IBOutlet weak var manufacturersTableView: UITableView!
@@ -24,6 +24,14 @@ final class ManufacturersListViewController: UIViewController {
             self?.manufacturersTableView.reloadData()
         }
         viewModel.page = 0
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == ManufacturersListViewController.mainTypesSegue,
+            let selectedManufacturer = viewModel.selectedManufacturer {
+            let detail = segue.destination as? MainTypesListViewController
+            detail?.configure(viewModel: MainTypesListViewModel(manufacturer: selectedManufacturer))
+        }
     }
 }
 
@@ -55,6 +63,7 @@ extension ManufacturersListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.selectManufacturer(atIndex: indexPath.row)
+        self.performSegue(withIdentifier: ManufacturersListViewController.mainTypesSegue, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

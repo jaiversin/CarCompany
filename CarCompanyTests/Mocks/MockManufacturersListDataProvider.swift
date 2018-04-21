@@ -29,8 +29,8 @@ fileprivate extension MockManufacturersListDataProvider {
         let manufacturersDictionary = JsonUtils.jsonDictionary(with: manufacturersData)
         
         let manufacturers = manufacturersDictionary?.flatMap { (arg) -> Manufacturer? in
-            let (key, value) = arg
-            guard let id = Int(key as String), let name = value as? String else {
+            let (id, value) = arg
+            guard let name = value as? String else {
                 return nil
             }
             return Manufacturer(id: id, name: name)

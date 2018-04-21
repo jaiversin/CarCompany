@@ -38,6 +38,8 @@
 		082C5254207F27DD00324DCC /* ManufacturersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5253207F27DD00324DCC /* ManufacturersListViewModel.swift */; };
 		082C5257207F2B2400324DCC /* ManufacturersListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5256207F2B2400324DCC /* ManufacturersListViewModelTests.swift */; };
 		082C5259207F2CCE00324DCC /* MockUseCasesLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C5258207F2CCE00324DCC /* MockUseCasesLocator.swift */; };
+		0882909F208AEA260044577B /* MainTypesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882909E208AEA260044577B /* MainTypesListViewController.swift */; };
+		088290A1208AEACA0044577B /* MainTypesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088290A0208AEACA0044577B /* MainTypesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		082C5253207F27DD00324DCC /* ManufacturersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturersListViewModel.swift; sourceTree = "<group>"; };
 		082C5256207F2B2400324DCC /* ManufacturersListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturersListViewModelTests.swift; sourceTree = "<group>"; };
 		082C5258207F2CCE00324DCC /* MockUseCasesLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUseCasesLocator.swift; sourceTree = "<group>"; };
+		0882909E208AEA260044577B /* MainTypesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypesListViewController.swift; sourceTree = "<group>"; };
+		088290A0208AEACA0044577B /* MainTypesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +257,7 @@
 		082C522E207EEE2600324DCC /* MainTypes */ = {
 			isa = PBXGroup;
 			children = (
+				0882909D208AE9BA0044577B /* UI */,
 				082C5230207EEE4000324DCC /* Model */,
 				082C522F207EEE3700324DCC /* Provider */,
 				082C5231207EEE5900324DCC /* UseCase */,
@@ -334,6 +339,15 @@
 				082C5256207F2B2400324DCC /* ManufacturersListViewModelTests.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0882909D208AE9BA0044577B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0882909E208AEA260044577B /* MainTypesListViewController.swift */,
+				088290A0208AEACA0044577B /* MainTypesListViewModel.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,6 +461,8 @@
 				082C52252079465600324DCC /* UseCasesLocator.swift in Sources */,
 				082C5235207EEF4F00324DCC /* MainTypesList.swift in Sources */,
 				082C51F820770D0A00324DCC /* ManufacturersListViewController.swift in Sources */,
+				0882909F208AEA260044577B /* MainTypesListViewController.swift in Sources */,
+				088290A1208AEACA0044577B /* MainTypesListViewModel.swift in Sources */,
 				082C5254207F27DD00324DCC /* ManufacturersListViewModel.swift in Sources */,
 				082C521C2077301100324DCC /* Manufacturer.swift in Sources */,
 				082C5239207EF05100324DCC /* MainTypesListDataProvider.swift in Sources */,

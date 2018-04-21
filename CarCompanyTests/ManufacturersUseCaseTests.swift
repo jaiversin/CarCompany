@@ -50,7 +50,7 @@ class ManufacturersUseCaseTests: XCTestCase {
             switch response {
             case .success(let manufacturers):
                 XCTAssertEqual(manufacturers.count, 15, "Every page fetch should bring 15 results")
-                XCTAssertEqual(manufacturers.first!, Manufacturer(id: 700, name: "Pontiac"), "Manufacturers should match")
+                XCTAssertEqual(manufacturers.first!, Manufacturer(id: "700", name: "Pontiac"), "Manufacturers should match")
             case .failure, .noInternetConnection:
                 XCTFail("Data provider error")
             }
